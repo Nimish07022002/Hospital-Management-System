@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="images/logo.png" />
+  <title>Hospital Management System</title>
+  <link rel="stylesheet" href="home.css" />
+  <script src="feedback.js" defer></script>
+</head>
+
+<body>
+  <div id="heading">
+    <img src="images/Medical.png" alt="logo" />
+    <a href="home.html">CARE LIFE HOSPITAL</a>
+  </div>
+
+  <nav>
+    <a href="home.html" class="nav-list">Home</a>
+    <div class="dropdown">
+      <button onmouseover="myFunction()" onclick="myFunction()" class="dropbtn">Appointment</button>
+      <div id="myDropdown" class="dropdown-content">
+        <a href="bookAppointment.html">Booking</a>
+        <a href="MedicineOrder.html">Medicine order</a>
+      </div>
+    </div>
+    <a id="disease-predictor" class="nav-list" onclick="DiseasePredictor()">Disease Predictor</a>
+    <a href="http://localhost/Hospital-Management-system/public/patin.php" class="nav-list">Save Lives</a>
+    <a href="healthCamps.html" class="nav-list">Health Camps</a>
+    <a class="nav-list" onclick="DiseaseInfo()">Disease Information</a>
+    <a href="contactUs.html" class="nav-list">Contact Us</a>
+    <a href="feedback.html" class="nav-list">Feedback</a>
+  </nav>
+  
+  <div style="
+        display: flex;
+        justify-content: center;
+        background-image: url(images/form-texture.jpeg);
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+      ">
+    <form id="feedback-form" action="/feedback" method="post">
+      <h1 style="text-align: center">Feedback Form</h1>
+
+      <center>
+        <label>Name :&nbsp;&nbsp;</label><input id="name" type="text" name="Name" id="name" placeholder="Name"
+          required /><br /><br />
+        <label>Email :&nbsp;&nbsp;</label><input id="email" type="email" name="email" id="email"
+          placeholder="E-Mail" /><br /><br />
+        <p style="float: left; margin: 0 -337px 0 338px">
+          Review :&nbsp;&nbsp;
+        </p>
+        <textarea name="feedback" id="feedback" cols="30" rows="10" placeholder="Review..."></textarea>
+      </center>
+      <div style="display: flex; justify-content: center">
+        <label for="rating">Rating :&nbsp;</label>
+        <input name="rate" value="1" class="rating" type="radio" />
+        <input name="rate" value="2" class="rating" type="radio" />
+        <input name="rate" value="3" class="rating" type="radio" />
+        <input name="rate" value="4" class="rating" type="radio" />
+        <input name="rate" value="5" class="rating" type="radio" />
+      </div>
+      <br />
+      <input type="submit" id="submitDetails" name="submitDetails" value="Submit" onclick="feed()" /><br />
+      <p style="color: green;padding-left: 3.4%; font-weight: 600; text-align: center;" name="msg" id="msg"></p>
+    </form>
+  </div>
+
+  <p id="copyright">&copy;copyrights reserved</p>
+</body>
+
+</html>

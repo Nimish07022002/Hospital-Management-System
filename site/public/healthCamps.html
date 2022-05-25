@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="images/logo.png" />
+    <title>Hospital Management System</title>
+    <link rel="stylesheet" href="home.css" />
+    <script src="feedback.js" defer></script>
+</head>
+<style>
+   section{
+       display: flex;
+       flex-direction: column;
+   }
+   .camp-main{
+       background-color: coral;
+
+   }
+</style>
+
+<body>
+
+    <div id="heading">
+        <img src="images/Medical.png" alt="logo" />
+        <a href="home.html">CARE LIFE HOSPITAL</a>
+    </div>
+
+    <nav>
+        <a href="home.html" class="nav-list">Home</a>
+        <div class="dropdown">
+            <button onmouseover="myFunction()" onclick="myFunction()" class="dropbtn">Appointment</button>
+            <div id="myDropdown" class="dropdown-content">
+                <a href="bookAppointment.html">Booking</a>
+                <a href="MedicineOrder.html">Medicine order</a>
+            </div>
+        </div>
+        <a id="disease-predictor" class="nav-list" onclick="DiseasePredictor()">Disease Predictor</a>
+        <a href="http://localhost/Hospital-Management-system/public/patin.php" class="nav-list">Save Lives</a>
+        <a href="healthCamps.html" class="nav-list">Health Camps</a>
+        <a class="nav-list" onclick="DiseaseInfo()">Disease Information</a>
+        <a href="contactUs.html" class="nav-list">Contact Us</a>
+        <a href="feedback.html" class="nav-list">Feedback</a>
+    </nav>
+
+<section>
+
+<div class="camp-main"></div>
+<p style="text-align:center;margin-top: 3%;">no Health camps yet</p>
+<div class="camp-main"></div>
+
+</section>
+
+
+  <p  id="copyright">&copy;copyrights reserved</p>
+</body>
+
+</html>

@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medicine Order</title>
+    <link rel="shortcut icon" href="images/logo.png" />
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="home.css" />
+    <script src="feedback.js" defer></script>
+    <script src="MedicineOrder.js" defer></script>
+</head>
+<style>
+    div.flex {
+        margin: 3%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .flex>.w-full {
+        border: 2px solid;
+        margin: 0.7rem 2%;
+        border-radius: 6px;
+    }
+
+    div>.w-full:hover {
+        box-shadow: 0 0 10px black;
+    }
+
+    p.flex {
+        cursor: pointer;
+    }
+
+    a.cart-btn:hover {
+        text-shadow: 0px 0 10px rgb(0, 153, 255);
+    }
+</style>
+
+<body onload="medOrder()">
+    <div id="heading">
+        <img src="images/Medical.png" alt="logo" />
+        <a href="home.html">CARE LIFE HOSPITAL</a>
+    </div>
+
+    <nav>
+        <a href="home.html" class="nav-list">Home</a>
+        <div class="dropdown">
+            <button onmouseover="myFunction()" onclick="myFunction()" class="dropbtn">Appointment</button>
+            <div id="myDropdown" class="dropdown-content">
+                <a href="bookAppointment.html">Booking</a>
+                <a href="MedicineOrder.html">Medicine order</a>
+            </div>
+        </div>
+        <a id="disease-predictor" class="nav-list" onclick="DiseasePredictor()">Disease Predictor</a>
+        <a href="http://localhost/Hospital-Management-system/public/patin.php" class="nav-list">Save Lives</a>
+        <a href="healthCamps.html" class="nav-list">Health Camps</a>
+        <a class="nav-list" onclick="DiseaseInfo()">Disease Information</a>
+        <a href="contactUs.html" class="nav-list">Contact Us</a>
+        <a href="feedback.html" class="nav-list">Feedback</a>
+    </nav>
+
+    <main style="margin-top: 6%;"
+        class="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
+        <div style="font-family:Al Bayan;" class="sm:text-center lg:text-left">
+            <h1 class="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
+                <span style="color: rgb(241, 46, 80);" class="block xl:inline">All your essential medicines</span>
+                <span style="color: rgb(3, 15, 108);" class="block text-indigo-600 xl:inline"> delivered with
+                    personalized care</span>
+            </h1>
+            <p
+                class="mt-3 text-base text-black-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
+                Get free home delivery for your medicines anywhere in
+                India.</p>
+            <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
+
+                <div class="mt-3 sm:mt-0 sm:ml-3">
+
+                </div>
+            </div>
+
+            <div class="cart">
+                <a href="cart.html"
+                    style="display: flex;float: right; margin: -1% 2% 0% 0%;font-weight: 600;font-size: x-large;"
+                    class="cart-btn">Go to
+                    Cart&nbsp;
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                        class="bi bi-cart" viewBox="0 0 16 16">
+                        <path
+                            d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+                    </svg>
+                </a>
+            </div>
+
+        </div>
+    </main>
+
+    <div class="flex flex-wrap">
+        <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+            <a class="block relative h-48 rounded overflow-hidden">
+                <img alt="ecommerce" class="object-cover object-center w-full h-full block"
+                    src=" https://media.sciencephoto.com/image/c0174892/800wm/C0174892-Synthroid_Levothyroxine_Box.jpg">
+            </a>
+            <div class="mt-4">
+                <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
+                <h2 id="Synthroid (Levothyroxine)" class="text-gray-900 title-font text-lg font-medium">Synthroid
+                    (Levothyroxine)
+
+                </h2>
+                <p class="mt-1"><b>Rs </b>75.00</p>
+                <p id="Synthroid (Levothyroxine)"
+                    class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-indigo-700 bg-indigo-100 hover:bg-indigo-200 md:py-4 md:text-lg md:px-10">
+                    add
+                    to cart</p>
+            </div>
+        </div>
+        <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+            <a class="block relative h-48 rounded overflow-hidden">
+                <img alt="ecommerce" class="object-cover object-center w-full h-full block"
+                    src=" https://www.netmeds.com/images/product-v1/600x600/24497/crestor_20mg_tablet_10s_0_1.jpg">
+            </a>
+            <div class="mt-4">
+                <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
+                <h2 id="Crestor" class="text-gray-900 title-font text-lg font-medium">Crestor
+
+                </h2>
+                <p class="mt-1"><b>Rs </b>91.15</p>
+                <p id="Crestor"
+                    class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-indigo-700 bg-indigo-100 hover:bg-indigo-200 md:py-4 md:text-lg md:px-10">
+                    add
+                    to cart</p>
+
+            </div>
+        </div>
+        <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+            <a class="block relative h-48 rounded overflow-hidden">
+                <img alt="ecommerce" class="object-cover object-center w-full h-full block"
+                    src="https://www.henryschein.com/Products/2283204_US_Front_01_600x600.jpg">
+            </a>
+            <div class="mt-4">
+                <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
+                <h2 id="Ventolin HFA " class="text-gray-900 title-font text-lg font-medium">Ventolin HFA
+
+                </h2>
+                <p class="mt-1"><b>Rs </b>63.00</p>
+                <p id="Ventolin HFA "
+                    class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-indigo-700 bg-indigo-100 hover:bg-indigo-200 md:py-4 md:text-lg md:px-10">
+                    add
+                    to cart</p>
+            </div>
+        </div>
+        <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+            <a class="block relative h-48 rounded overflow-hidden">
+                <img alt="ecommerce" class="object-cover object-center w-full h-full block"
+                    src="https://5.imimg.com/data5/QM/TG/MY-9157849/nexium-20mg-500x500.jpg">
+            </a>
+            <div class="mt-4">
+                <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
+                <h2 id="Nexium" class="text-gray-900 title-font text-lg font-medium">Nexium
+
+                </h2>
+                <p class="mt-1"><b>Rs </b>35.40</p>
+                <p id="Nexium"
+                    class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-indigo-700 bg-indigo-100 hover:bg-indigo-200 md:py-4 md:text-lg md:px-10">
+                    add
+                    to cart</p>
+            </div>
+        </div>
+        <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+            <a class="block relative h-48 rounded overflow-hidden">
+                <img alt="ecommerce" class="object-cover object-center w-full h-full block"
+                    src="https://5.imimg.com/data5/SELLER/Default/2022/4/CV/WI/RC/138066633/advair-fluticasone-salmeterol-500x500-500x500.jpg">
+            </a>
+            <div class="mt-4">
+                <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
+                <h2 id="Advair Diskus" class="text-gray-900 title-font text-lg font-medium">Advair Diskus
+
+                </h2>
+                <p class="mt-1"><b>Rs </b>56.00</p>
+                <p id="Advair Diskus"
+                    class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-indigo-700 bg-indigo-100 hover:bg-indigo-200 md:py-4 md:text-lg md:px-10">
+                    add
+                    to cart</p>
+            </div>
+        </div>
+        <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+            <a class="block relative h-48 rounded overflow-hidden">
+                <img alt="ecommerce" class="object-cover object-center w-full h-full block"
+                    src=" https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Toujeo_300_IU-ml_inj.jpg/330px-Toujeo_300_IU-ml_inj.jpg">
+            </a>
+            <div class="mt-4">
+                <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
+                <h2 id="Lantus Solostar" class="text-gray-900 title-font text-lg font-medium">Lantus Solostar
+
+                </h2>
+                <p class="mt-1"><b>Rs </b>76.15</p>
+                <p id="Lantus Solostar"
+                    class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-indigo-700 bg-indigo-100 hover:bg-indigo-200 md:py-4 md:text-lg md:px-10">
+                    add
+                    to cart</p>
+            </div>
+        </div>
+        <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+            <a class="block relative h-48 rounded overflow-hidden">
+                <img alt="ecommerce" class="object-cover object-center w-full h-full block"
+                    src="data:image/jpeg;base64,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">
+            </a>
+            <div class="mt-4">
+                <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
+                <h2 id="Vyvanse " class="text-gray-900 title-font text-lg font-medium">Vyvanse
+
+                </h2>
+                <p class="mt-1"><b>Rs </b>43.00</p>
+                <p id="Vyvanse "
+                    class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-indigo-700 bg-indigo-100 hover:bg-indigo-200 md:py-4 md:text-lg md:px-10">
+                    add
+                    to cart</p>
+            </div>
+        </div>
+        <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+            <a class="block relative h-48 rounded overflow-hidden">
+                <img alt="ecommerce" class="object-cover object-center w-full h-full block"
+                    src="https://onemg.gumlet.io/image/upload/l_watermark_346,w_480,h_480/a_ignore,w_480,h_480,c_fit,q_auto,f_auto/v1600080518/cropped/u3xdyrws0qtncoziriam.jpg">
+            </a>
+            <div class="mt-4">
+                <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
+                <h2 id="Lyrica" class="text-gray-900 title-font text-lg font-medium">Lyrica
+
+                </h2>
+                <p class="mt-1"><b>Rs </b>38.40</p>
+                <p id="Lyrica"
+                    class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-indigo-700 bg-indigo-100 hover:bg-indigo-200 md:py-4 md:text-lg md:px-10">
+                    add
+                    to cart</p>
+            </div>
+
+        </div>
+        <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+            <a class="block relative h-48 rounded overflow-hidden">
+                <img alt="ecommerce" class="object-cover object-center w-full h-full block"
+                    src="data:image/jpeg;base64,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">
+            </a>
+            <div class="mt-4">
+                <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
+                <h2 id="Spiriva " class="text-gray-900 title-font text-lg font-medium">Spiriva
+
+                </h2>
+                <p class="mt-1"><b>Rs </b>78.13</p>
+                <p id="Spiriva "
+                    class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-indigo-700 bg-indigo-100 hover:bg-indigo-200 md:py-4 md:text-lg md:px-10">
+                    add
+                    to cart</p>
+            </div>
+
+        </div>
+        <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+            <a class="block relative h-48 rounded overflow-hidden">
+                <img alt="ecommerce" class="object-cover object-center w-full h-full block"
+                    src="data:image/jpeg;base64,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">
+            </a>
+            <div class="mt-4">
+                <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
+                <h2 id="Januvia (sitagliptin)" class="text-gray-900 title-font text-lg font-medium">Januvia
+                    (sitagliptin)
+
+                </h2>
+                <p class="mt-1"><b>Rs </b>13.10</p>
+                <p id="Januvia (sitagliptin)"
+                    class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-indigo-700 bg-indigo-100 hover:bg-indigo-200 md:py-4 md:text-lg md:px-10">
+                    add
+                    to cart</p>
+            </div>
+
+        </div>
+        <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+            <a class="block relative h-48 rounded overflow-hidden">
+                <img alt="ecommerce" class="object-cover object-center w-full h-full block"
+                    src="data:image/jpeg;base64,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">
+            </a>
+            <div class="mt-4">
+                <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
+                <h2 id="acetaminophen (tylenol)" class="text-gray-900 title-font text-lg font-medium">acetaminophen
+                    (tylenol)
+
+                </h2>
+                <p class="mt-1"><b>Rs </b>27.10</p>
+                <p id="acetaminophen (tylenol)"
+                    class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-indigo-700 bg-indigo-100 hover:bg-indigo-200 md:py-4 md:text-lg md:px-10">
+                    add
+                    to cart</p>
+            </div>
+
+        </div>
+        <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+            <a class="block relative h-48 rounded overflow-hidden">
+                <img alt="ecommerce" class="object-cover object-center w-full h-full block"
+                    src="data:image/jpeg;base64,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">
+            </a>
+            <div class="mt-4">
+                <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
+                <h2 id="Aspirin" class="text-gray-900 title-font text-lg font-medium">Aspirin
+
+                </h2>
+                <p class="mt-1"><b>Rs </b>33.40</p>
+                <p id="Aspirin"
+                    class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-indigo-700 bg-indigo-100 hover:bg-indigo-200 md:py-4 md:text-lg md:px-10">
+                    add
+                    to cart</p>
+            </div>
+
+        </div>
+        <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+            <a class="block relative h-48 rounded overflow-hidden">
+                <img alt="ecommerce" class="object-cover object-center w-full h-full block"
+                    src="https://onemg.gumlet.io/image/upload/l_watermark_346,w_480,h_480/a_ignore,w_480,h_480,c_fit,q_auto,f_auto/v1631525797/m679ee9wemhxx03whuay.jpg">
+            </a>
+            <div class="mt-4">
+                <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
+                <h2 id="Augmentin 625 Duo Tablet" class="text-gray-900 title-font text-lg font-medium">Augmentin 625 Duo
+                    Tablet
+                </h2>
+                <p class="mt-1"><b>Rs </b>39.40</p>
+                <p id="Augmentin 625 Duo Tablet"
+                    class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-indigo-700 bg-indigo-100 hover:bg-indigo-200 md:py-4 md:text-lg md:px-10">
+                    add
+                    to cart</p>
+            </div>
+
+        </div>
+        <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+            <a class="block relative h-48 rounded overflow-hidden">
+                <img alt="ecommerce" class="object-cover object-center w-full h-full block"
+                    src="https://onemg.gumlet.io/image/upload/l_watermark_346,w_480,h_480/a_ignore,w_480,h_480,c_fit,q_auto,f_auto/v1600151182/cropped/kqkouvaqejbyk47dvjfu.jpg">
+            </a>
+            <div class="mt-4">
+                <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
+                <h2 id="Azithral 500 Tablet" class="text-gray-900 title-font text-lg font-medium">Azithral 500 Tablet
+
+                </h2>
+                <p class="mt-1"><b>Rs </b>98.23</p>
+                <p id="Azithral 500 Tablet"
+                    class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-indigo-700 bg-indigo-100 hover:bg-indigo-200 md:py-4 md:text-lg md:px-10">
+                    add
+                    to cart</p>
+            </div>
+
+        </div>
+        <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+            <a class="block relative h-48 rounded overflow-hidden">
+                <img alt="ecommerce" class="object-cover object-center w-full h-full block"
+                    src="https://onemg.gumlet.io/image/upload/l_watermark_346,w_480,h_480/a_ignore,w_480,h_480,c_fit,q_auto,f_auto/v1600084406/cropped/b949nty485o1itezg3ya.jpg">
+            </a>
+            <div class="mt-4">
+                <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
+                <h2 id="Allegra 120mg Tablet" class="text-gray-900 title-font text-lg font-medium">Allegra 120mg Tablet
+
+                </h2>
+                <p class="mt-1"><b>Rs </b>81.89</p>
+                <p id="Allegra 120mg Tablet"
+                    class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-indigo-700 bg-indigo-100 hover:bg-indigo-200 md:py-4 md:text-lg md:px-10">
+                    add
+                    to cart</p>
+            </div>
+
+        </div>
+        <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+            <a class="block relative h-48 rounded overflow-hidden">
+                <img alt="ecommerce" class="object-cover object-center w-full h-full block"
+                    src="https://onemg.gumlet.io/image/upload/l_watermark_346,w_480,h_480/a_ignore,w_480,h_480,c_fit,q_auto,f_auto/v1600084529/cropped/mmsye6bf97tkcocat24j.jpg">
+            </a>
+            <div class="mt-4">
+                <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
+                <h2 id="Avil 25 Tablet" class="text-gray-900 title-font text-lg font-medium">Avil 25 Tablet
+
+                </h2>
+                <p class="mt-1"><b>Rs </b>47.59</p>
+                <p id="Avil 25 Tablet"
+                    class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-indigo-700 bg-indigo-100 hover:bg-indigo-200 md:py-4 md:text-lg md:px-10">
+                    add
+                    to cart</p>
+            </div>
+
+        </div>
+        <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+            <a class="block relative h-48 rounded overflow-hidden">
+                <img alt="ecommerce" class="object-cover object-center w-full h-full block"
+                    src=" https://onemg.gumlet.io/image/upload/l_watermark_346,w_480,h_480/a_ignore,w_480,h_480,c_fit,q_auto,f_auto/v1600080513/cropped/tbb9sppofitfuhcbk85c.jpg">
+            </a>
+            <div class="mt-4">
+                <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
+                <h2 id="Avomine Tablet" class="text-gray-900 title-font text-lg font-medium">Avomine Tablet
+
+                </h2>
+                <p class="mt-1"><b>Rs </b>77.22</p>
+                <p id="Avomine Tablet"
+                    class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-indigo-700 bg-indigo-100 hover:bg-indigo-200 md:py-4 md:text-lg md:px-10">
+                    add
+                    to cart</p>
+            </div>
+
+        </div>
+        <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+            <a class="block relative h-48 rounded overflow-hidden">
+                <img alt="ecommerce" class="object-cover object-center w-full h-full block"
+                    src="https://onemg.gumlet.io/image/upload/l_watermark_346,w_480,h_480/a_ignore,w_480,h_480,c_fit,q_auto,f_auto/v1600149496/cropped/jbpnjvst3ph0xnrq199o.jpg">
+            </a>
+            <div class="mt-4">
+                <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
+                <h2 id="Azee 500 Tablet" class="text-gray-900 title-font text-lg font-medium">Azee 500 Tablet
+
+                </h2>
+                <p class="mt-1"><b>Rs </b>66.87</p>
+                <p id="Azee 500 Tablet"
+                    class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-indigo-700 bg-indigo-100 hover:bg-indigo-200 md:py-4 md:text-lg md:px-10">
+                    add
+                    to cart</p>
+            </div>
+
+        </div>
+        <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+            <a class="block relative h-48 rounded overflow-hidden">
+                <img alt="ecommerce" class="object-cover object-center w-full h-full block"
+                    src="https://onemg.gumlet.io/image/upload/l_watermark_346,w_480,h_480/a_ignore,w_480,h_480,c_fit,q_auto,f_auto/v1611582295/mqdfwomjrjv3lvlq08ae.jpg">
+            </a>
+            <div class="mt-4">
+                <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
+                <h2 id="Alex Syrup" class="text-gray-900 title-font text-lg font-medium">Alex Syrup
+
+                </h2>
+                <p class="mt-1"><b>Rs </b>55.98</p>
+                <p id="Alex Syrup"
+                    class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-indigo-700 bg-indigo-100 hover:bg-indigo-200 md:py-4 md:text-lg md:px-10">
+                    add
+                    to cart</p>
+            </div>
+
+        </div>
+        <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+            <a class="block relative h-48 rounded overflow-hidden">
+                <img alt="ecommerce" class="object-cover object-center w-full h-full block"
+                    src="https://onemg.gumlet.io/image/upload/l_watermark_346,w_480,h_480/a_ignore,w_480,h_480,c_fit,q_auto,f_auto/v1600161443/cropped/kvdgswy8eyzkwmulwlyf.jpg">
+            </a>
+            <div class="mt-4">
+                <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
+                <h2 id="Arkamin Tablet" class="text-gray-900 title-font text-lg font-medium">Arkamin Tablet
+
+                </h2>
+                <p class="mt-1"><b>Rs </b>28.00</p>
+                <p id="Arkamin Tablet"
+                    class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-indigo-700 bg-indigo-100 hover:bg-indigo-200 md:py-4 md:text-lg md:px-10">
+                    add
+                    to cart</p>
+            </div>
+
+        </div>
+        <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+            <a class="block relative h-48 rounded overflow-hidden">
+                <img alt="ecommerce" class="object-cover object-center w-full h-full block"
+                    src="https://onemg.gumlet.io/image/upload/l_watermark_346,w_480,h_480/a_ignore,w_480,h_480,c_fit,q_auto,f_auto/v1600150060/cropped/hg4gkjmjrg9956tqtmoz.jpg">
+            </a>
+            <div class="mt-4">
+                <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
+                <h2 id="Augmentin Duo Oral Suspension" class="text-gray-900 title-font text-lg font-medium">Augmentin
+                    Duo Oral Suspension
+
+                </h2>
+                <p class="mt-1"><b>Rs </b>19.40</p>
+                <p id="Augmentin Duo Oral Suspension"
+                    class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-indigo-700 bg-indigo-100 hover:bg-indigo-200 md:py-4 md:text-lg md:px-10">
+                    add
+                    to cart</p>
+            </div>
+
+        </div>
+        <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+            <a class="block relative h-48 rounded overflow-hidden">
+                <img alt="ecommerce" class="object-cover object-center w-full h-full block"
+                    src="https://onemg.gumlet.io/image/upload/l_watermark_346,w_480,h_480/a_ignore,w_480,h_480,c_fit,q_auto,f_auto/v1600105414/cropped/mjfjekt0nzu1ckcwxkox.jpg">
+            </a>
+            <div class="mt-4">
+                <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
+                <h2 id="Ambrodil-S Syrup" class="text-gray-900 title-font text-lg font-medium">Ambrodil-S Syrup
+
+                </h2>
+                <p class="mt-1"><b>Rs </b>92.40</p>
+                <p id="Ambrodil-S Syrup"
+                    class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-indigo-700 bg-indigo-100 hover:bg-indigo-200 md:py-4 md:text-lg md:px-10">
+                    add
+                    to cart</p>
+            </div>
+
+        </div>
+        <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+            <a class="block relative h-48 rounded overflow-hidden">
+                <img alt="ecommerce" class="object-cover object-center w-full h-full block"
+                    src="https://onemg.gumlet.io/image/upload/l_watermark_346,w_480,h_480/a_ignore,w_480,h_480,c_fit,q_auto,f_auto/v1600089575/cropped/mbdxk2kboh3llijyaao2.jpg">
+            </a>
+            <div class="mt-4">
+                <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
+                <h2 id="Azithral 200 Liquid" class="text-gray-900 title-font text-lg font-medium">Azithral 200 Liquid
+
+                </h2>
+                <p class="mt-1"><b>Rs </b>78.49</p>
+                <p id="Azithral 200 Liquid"
+                    class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-indigo-700 bg-indigo-100 hover:bg-indigo-200 md:py-4 md:text-lg md:px-10">
+                    add
+                    to cart</p>
+            </div>
+
+        </div>
+        <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+            <a class="block relative h-48 rounded overflow-hidden">
+                <img alt="ecommerce" class="object-cover object-center w-full h-full block"
+                    src="https://onemg.gumlet.io/image/upload/l_watermark_346,w_480,h_480/a_ignore,w_480,h_480,c_fit,q_auto,f_auto/v1600091239/cropped/hqnb7foc1itgjxokrnjb.jpg">
+            </a>
+            <div class="mt-4">
+                <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
+                <h2 id="Asthalin 100mcg Inhaler" class="text-gray-900 title-font text-lg font-medium">Asthalin 100mcg
+                    Inhaler
+
+                </h2>
+                <p class="mt-1"><b>Rs </b>53.48</p>
+                <p id="Asthalin 100mcg Inhaler"
+                    class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-indigo-700 bg-indigo-100 hover:bg-indigo-200 md:py-4 md:text-lg md:px-10">
+                    add
+                    to cart</p>
+            </div>
+
+        </div>
+        <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+            <a class="block relative h-48 rounded overflow-hidden">
+                <img alt="ecommerce" class="object-cover object-center w-full h-full block"
+                    src="https://onemg.gumlet.io/image/upload/l_watermark_346,w_480,h_480/a_ignore,w_480,h_480,c_fit,q_auto,f_auto/v1600148391/cropped/a0ypuqdcrml4wk7opxro.jpg">
+            </a>
+            <div class="mt-4">
+                <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
+                <h2 id="Arachitol 6L Injection" class="text-gray-900 title-font text-lg font-medium">Arachitol 6L
+                    Injection
+
+                </h2>
+                <p class="mt-1"><b>Rs </b>35.76</p>
+                <p id="Arachitol 6L Injection"
+                    class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-indigo-700 bg-indigo-100 hover:bg-indigo-200 md:py-4 md:text-lg md:px-10">
+                    add
+                    to cart</p>
+            </div>
+
+        </div>
+        <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+            <a class="block relative h-48 rounded overflow-hidden">
+                <img alt="ecommerce" class="object-cover object-center w-full h-full block"
+                    src="https://onemg.gumlet.io/image/upload/l_watermark_346,w_480,h_480/a_ignore,w_480,h_480,c_fit,q_auto,f_auto/v1600149293/cropped/gjg3urp1eyadzqi4kgjs.jpg">
+            </a>
+            <div class="mt-4">
+                <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
+                <h2 id="Atarax 10mg Tablet" class="text-gray-900 title-font text-lg font-medium">Atarax 10mg Tablet
+
+                </h2>
+                <p class="mt-1"><b>Rs </b>74.77</p>
+                <p id="Atarax 10mg Tablet"
+                    class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-indigo-700 bg-indigo-100 hover:bg-indigo-200 md:py-4 md:text-lg md:px-10">
+                    add
+                    to cart</p>
+            </div>
+
+        </div>
+        <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+            <a class="block relative h-48 rounded overflow-hidden">
+                <img alt="ecommerce" class="object-cover object-center w-full h-full block"
+                    src="https://onemg.gumlet.io/image/upload/l_watermark_346,w_480,h_480/a_ignore,w_480,h_480,c_fit,q_auto,f_auto/v1600141877/cropped/igkgkxbpsaqj72dyset5.jpg">
+            </a>
+            <div class="mt-4">
+                <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
+                <h2 id="Aciloc RD 20 Tablet" class="text-gray-900 title-font text-lg font-medium">Aciloc RD 20 Tablet
+
+                </h2>
+                <p class="mt-1"><b>Rs </b>66.74</p>
+                <p id="Aciloc RD 20 Tablet"
+                    class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-indigo-700 bg-indigo-100 hover:bg-indigo-200 md:py-4 md:text-lg md:px-10">
+                    add
+                    to cart</p>
+            </div>
+
+        </div>
+        <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+            <a class="block relative h-48 rounded overflow-hidden">
+                <img alt="ecommerce" class="object-cover object-center w-full h-full block"
+                    src="https://onemg.gumlet.io/image/upload/l_watermark_346,w_480,h_480/a_ignore,w_480,h_480,c_fit,q_auto,f_auto/v1600090262/cropped/gsymbrdzl7bxuqp9txrz.jpg">
+            </a>
+            <div class="mt-4">
+                <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
+                <h2 id="Akt 4 Kit" class="text-gray-900 title-font text-lg font-medium">Akt 4 Kit
+
+                </h2>
+                <p class="mt-1"><b>Rs </b>44.88</p>
+                <p id="Akt 4 Kit"
+                    class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-indigo-700 bg-indigo-100 hover:bg-indigo-200 md:py-4 md:text-lg md:px-10">
+                    add
+                    to cart</p>
+            </div>
+
+        </div>
+        <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+            <a class="block relative h-48 rounded overflow-hidden">
+                <img alt="ecommerce" class="object-cover object-center w-full h-full block"
+                    src="https://onemg.gumlet.io/image/upload/l_watermark_346,w_480,h_480/a_ignore,w_480,h_480,c_fit,q_auto,f_auto/v1600171210/cropped/r22ftufqfbkaxevlo6wn.jpg">
+            </a>
+            <div class="mt-4">
+                <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
+                <h2 id="Ascoril LS Junior Syrup" class="text-gray-900 title-font text-lg font-medium">Ascoril LS Junior
+                    Syrup
+
+                </h2>
+                <p class="mt-1"><b>Rs </b>91.49</p>
+                <p id="Ascoril LS Junior Syrup"
+                    class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-indigo-700 bg-indigo-100 hover:bg-indigo-200 md:py-4 md:text-lg md:px-10">
+                    add
+                    to cart</p>
+            </div>
+
+        </div>
+        <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+            <a class="block relative h-48 rounded overflow-hidden">
+                <img alt="ecommerce" class="object-cover object-center w-full h-full block"
+                    src="https://onemg.gumlet.io/image/upload/l_watermark_346,w_480,h_480/a_ignore,w_480,h_480,c_fit,q_auto,f_auto/v1600089256/cropped/a34pbmqti99hu1y1zz5r.jpg">
+            </a>
+            <div class="mt-4">
+                <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
+                <h2 id="Alfoo 10mg Tablet PR" class="text-gray-900 title-font text-lg font-medium">Alfoo 10mg Tablet PR
+
+                </h2>
+                <p class="mt-1"><b>Rs </b>72.76</p>
+                <p id="Alfoo 10mg Tablet PR"
+                    class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-indigo-700 bg-indigo-100 hover:bg-indigo-200 md:py-4 md:text-lg md:px-10">
+                    add
+                    to cart</p>
+            </div>
+
+        </div>
+        <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+            <a class="block relative h-48 rounded overflow-hidden">
+                <img alt="ecommerce" class="object-cover object-center w-full h-full block"
+                    src="https://onemg.gumlet.io/image/upload/l_watermark_346,w_480,h_480/a_ignore,w_480,h_480,c_fit,q_auto,f_auto/v1614863186/sti88ovcnm6faxcoexvf.jpg">
+            </a>
+            <div class="mt-4">
+                <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
+                <h2 id="Azicip 500 Tablet" class="text-gray-900 title-font text-lg font-medium">Azicip 500 Tablet
+
+                </h2>
+                <p class="mt-1"><b>Rs </b>105.00</p>
+                <p id="Azicip 500 Tablet"
+                    class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-indigo-700 bg-indigo-100 hover:bg-indigo-200 md:py-4 md:text-lg md:px-10">
+                    add
+                    to cart</p>
+            </div>
+
+        </div>
+        <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+            <a class="block relative h-48 rounded overflow-hidden">
+                <img alt="ecommerce" class="object-cover object-center w-full h-full block"
+                    src="https://onemg.gumlet.io/image/upload/l_watermark_346,w_480,h_480/a_ignore,w_480,h_480,c_fit,q_auto,f_auto/v1600084382/cropped/qdjkuq9eipidsadmcosn.jpg">
+            </a>
+            <div class="mt-4">
+                <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
+                <h2 id="Aceclo Plus Tablet" class="text-gray-900 title-font text-lg font-medium">Aceclo Plus Tablet
+
+                </h2>
+                <p class="mt-1"><b>Rs </b>128.90</p>
+                <p id="Aceclo Plus Tablet"
+                    class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-indigo-700 bg-indigo-100 hover:bg-indigo-200 md:py-4 md:text-lg md:px-10">
+                    add
+                    to cart</p>
+            </div>
+
+        </div>
+        <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+            <a class="block relative h-48 rounded overflow-hidden">
+                <img alt="ecommerce" class="object-cover object-center w-full h-full block"
+                    src=" https://onemg.gumlet.io/image/upload/l_watermark_346,w_480,h_480/a_ignore,w_480,h_480,c_fit,q_auto,f_auto/v1600082474/cropped/pydoe2cjed0vjf2or3kk.jpg">
+            </a>
+            <div class="mt-4">
+                <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
+                <h2 id="AB Phylline Capsule" class="text-gray-900 title-font text-lg font-medium">AB Phylline Capsule
+
+                </h2>
+                <p class="mt-1"><b>Rs </b>132.67</p>
+                <p id="AB Phylline Capsule"
+                    class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-indigo-700 bg-indigo-100 hover:bg-indigo-200 md:py-4 md:text-lg md:px-10">
+                    add
+                    to cart</p>
+            </div>
+
+        </div>
+        <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+            <a class="block relative h-48 rounded overflow-hidden">
+                <img alt="ecommerce" class="object-cover object-center w-full h-full block"
+                    src="https://onemg.gumlet.io/image/upload/l_watermark_346,w_480,h_480/a_ignore,w_480,h_480,c_fit,q_auto,f_auto/v1600179092/cropped/ud4pymcjxgaziyzgqhso.jpg ">
+            </a>
+            <div class="mt-4">
+                <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
+                <h2 id="Azmarda 50mg Tablet" class="text-gray-900 title-font text-lg font-medium">Azmarda 50mg Tablet
+
+                </h2>
+                <p class="mt-1"><b>Rs </b>87.80</p>
+                <p id="Azmarda 50mg Tablet"
+                    class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-indigo-700 bg-indigo-100 hover:bg-indigo-200 md:py-4 md:text-lg md:px-10">
+                    add
+                    to cart</p>
+            </div>
+
+        </div>
+        <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+            <a class="block relative h-48 rounded overflow-hidden">
+                <img alt="ecommerce" class="object-cover object-center w-full h-full block"
+                    src="https://onemg.gumlet.io/image/upload/l_watermark_346,w_480,h_480/a_ignore,w_480,h_480,c_fit,q_auto,f_auto/v1600084382/cropped/hfobjftgqrervreplh6u.jpg">
+            </a>
+            <div class="mt-4">
+                <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
+                <h2 id="AF Kit Tablet" class="text-gray-900 title-font text-lg font-medium">AF Kit Tablet
+
+                </h2>
+                <p class="mt-1"><b>Rs </b>56.50</p>
+                <p id="AF Kit Tablet"
+                    class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-indigo-700 bg-indigo-100 hover:bg-indigo-200 md:py-4 md:text-lg md:px-10">
+                    add
+                    to cart</p>
+            </div>
+
+        </div>
+        <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+            <a class="block relative h-48 rounded overflow-hidden">
+                <img alt="ecommerce" class="object-cover object-center w-full h-full block"
+                    src="https://onemg.gumlet.io/image/upload/l_watermark_346,w_480,h_480/a_ignore,w_480,h_480,c_fit,q_auto,f_auto/v1600109741/cropped/t8e7gul8px0js0dzcdwf.jpg">
+            </a>
+            <div class="mt-4">
+                <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
+                <h2 id="Acivir 400 DT Tablet" class="text-gray-900 title-font text-lg font-medium">Acivir 400 DT Tablet
+
+                </h2>
+                <p class="mt-1"><b>Rs </b>18.40</p>
+                <p id="Acivir 400 DT Tablet"
+                    class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-indigo-700 bg-indigo-100 hover:bg-indigo-200 md:py-4 md:text-lg md:px-10">
+                    add
+                    to cart</p>
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    <p id="copyright">&copy;copyrights reserved</p>
+</body>
+
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="images/logo.png" />
+  <title>Hospital Management System</title>
+  <link rel="stylesheet" href="home.css" />
+  <script src="feedback.js" defer></script>
+
+  <style>
+    body {
+      margin: 0 auto;
+    }
+
+    .container {
+      padding: 11px 50px;
+      background-color: lightblue;
+      font-family: none;
+    }
+
+    label {
+      font-weight: 600;
+      margin-bottom: 3px;
+    }
+
+    input[type="text"],
+    textarea {
+      width: 97.6%;
+      padding: 15px;
+      margin: 5px 0 22px 0;
+      display: inline-block;
+      border: none;
+      background: #f1f1f1;
+      border-radius: 0.75em;
+    }
+
+    input[type="text"]:focus,
+    textarea:focus {
+      background-color: rgb(210, 247, 245);
+      outline: none;
+    }
+
+    div {
+      padding: 10px 0;
+    }
+
+    hr {
+      border: 1px solid #f1f1f1;
+      margin-bottom: 32px;
+      width: 32%;
+      box-shadow: 0px 0px 12px;
+      margin-top: -14px;
+    }
+
+    .registerbtn {
+      background-color: rgb(3 60 115);
+      ;
+      color: white;
+      padding: 15px 20px;
+      margin: 21px 0 45px 41%;
+      border: none;
+      cursor: pointer;
+      width: 20%;
+      font-size: 19px;
+      opacity: 0.9;
+      border-radius: 0.75rem;
+    }
+
+    .registerbtn:hover {
+      opacity: 1;
+    }
+  </style>
+
+  <link rel="stylesheet" href="home.css" />
+</head>
+
+<body>
+  <div id="heading">
+    <img src="images/Medical.png" alt="logo" />
+    <a href="home.html">CARE LIFE HOSPITAL</a>
+  </div>
+
+  <nav>
+    <a href="home.html" class="nav-list">Home</a>
+    <div class="dropdown">
+      <button onmouseover="myFunction()" onclick="myFunction()" class="dropbtn">Appointment</button>
+      <div id="myDropdown" class="dropdown-content">
+        <a href="#home">Booking</a>
+        <a href="MedicineOrder.html">Medicine order</a>
+      </div>
+    </div>
+    <a id="disease-predictor" class="nav-list" onclick="DiseasePredictor()">Disease Predictor</a>
+    <a href="http://localhost/Hospital-Management-system/public/patin.php" class="nav-list">Save Lives</a>
+    <a href="healthCamps.html" class="nav-list">Health Camps</a>
+    <a class="nav-list" onclick="DiseaseInfo()">Disease Information</a>
+    <a href="contactUs.html" class="nav-list">Contact Us</a>
+    <a href="feedback.html" class="nav-list">Feedback</a>
+  </nav>
+
+  <form class="container" action="/bookAppointment" method="post">
+    <!-- <div class="container"> -->
+    <center>
+      <h1>Appointment booking Form</h1>
+    </center>
+    <hr />
+    <label> First Name : </label>
+    <input type="text" name="firstname" placeholder="First name" size="15" required />
+
+    <label> Last Name : </label>
+    <input type="text" name="lastname" placeholder="Last name" size="15" required />
+    <label> Departments : </label>
+
+    <select name="dept">
+      <option value="Departments" selected>Departments</option>
+      <option value="Orthopaedics">Orthopaedics</option>
+      <option value="Cardiology">Cardiology</option>
+      <option value="Gynocologist">Gynocologist</option>
+      <option value="Homopathic">Homopathic</option>
+      <option value="Neurologist">Neurologist</option>
+    </select>
+    <br /><br />
+    <label> Gender : </label><br />
+    <input type="radio" value="Male" name="gender" checked /> Male
+    <input type="radio" value="Female" name="gender" /> Female
+    <input type="radio" value="Other" name="gender" /> Other <br /><br />
+    <label> Phone : </label>
+    <input type="text" name="phoneNo" placeholder="Country Code" value="+91 " size="2" />
+    <label> Date : </label>
+    <input type="date" name="date" placeholder="mm-dd-yyyy" />
+    <br />
+    <br />
+    <label> Current Address : </label>
+    <textarea cols="80" rows="5" placeholder="Current Address" value="address" name="address" required>
+      </textarea>
+    <label for="email">Email :</label>
+    <input type="text" placeholder="Enter Email" name="email" required />
+
+    <!-- </div> -->
+    <input type="submit" class="registerbtn" value="Book Appointment" />
+  </form>
+
+  <p id="copyright">&copy;copyrights reserved</p>
+
+</body>
+
+</html>

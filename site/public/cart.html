@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="images/logo.png" />
+    <title>Hospital Management System</title>
+    <link rel="stylesheet" href="home.css" />
+    <script src="MedicineOrder.js" defer></script>
+    <script src="feedback.js" defer></script>
+</head>
+<style>
+    body {
+        background-color: rgb(207, 240, 255);
+    }
+
+    table,
+    td,
+    th {
+        border: 1px solid rgb(0, 0, 0);
+    }
+
+    th,
+    td {
+        padding: 10px 82px 10px 72px;
+        text-align: center;
+        background-color: aliceblue;
+    }
+
+    table {
+        margin: 3% 0 0 16%;
+        background-color: black;
+    }
+
+
+    table button {
+        width: 3rem;
+        /* border-radius: 30%; */
+        color: white;
+        font-size: 17px;
+        font-weight: 600;
+        margin: 10px -4% 0 14.5%;
+    }
+
+    h2+button:active {
+        box-shadow: 0 0 10px black;
+    }
+</style>
+
+<body onload="cart()">
+    
+    <div id="heading">
+        <img src="images/Medical.png" alt="logo" />
+        <a href="home.html">CARE LIFE HOSPITAL</a>
+    </div>
+
+    <nav>
+        <a href="home.html" class="nav-list">Home</a>
+        <div class="dropdown">
+            <button onmouseover="myFunction()" onclick="myFunction()" class="dropbtn">Appointment</button>
+            <div id="myDropdown" class="dropdown-content">
+                <a href="bookAppointment.html">Booking</a>
+                <a href="MedicineOrder.html">Medicine order</a>
+            </div>
+        </div>
+        <a id="disease-predictor" class="nav-list" onclick="DiseasePredictor()">Disease Predictor</a>
+        <a href="http://localhost/Hospital-Management-system/public/patin.php" class="nav-list">Save Lives</a>
+        <a href="healthCamps.html" class="nav-list">Health Camps</a>
+        <a class="nav-list" onclick="DiseaseInfo()">Disease Information</a>
+        <a href="contactUs.html" class="nav-list">Contact Us</a>
+        <a href="feedback.html" class="nav-list">Feedback</a>
+    </nav>
+
+    <table class="tbl">
+        <tr>
+            <th style="font-size: 22px; color: red;">Medicine Name</th>
+            <th style="font-size: 22px; color: blue;">Price</th>
+            <th style="font-size: 22px; color: purple;">Quantity</th>
+            <th></th>
+        </tr>
+    </table>
+
+    <center>
+        <h2 style="width:38%;border: 3px solid rgb(255, 0, 0);background-color: rgb(244, 255, 221);margin-top: 2rem;"
+            id="total"></h2>
+        <button style="width: 21%;font-size:21px;margin-bottom:4%;padding: 8px;background-color: orange;" id="confirm"
+            onclick="submit()"><b>Add Details & Place Order</b></button>
+    </center>
+
+    <form style="display:none;" id="submit-details" action="/details" method="post">
+        <h1 style="text-align: center">Enter Your Details</h1>
+
+        <center>
+            <label>Name :&nbsp;&nbsp;</label><input id="name" type="text" name="Name" id="name" placeholder="Name"
+                required /><br /><br />
+            <label style="margin-left:-32px;">Phone no. :&nbsp;&nbsp;</label><input id="name" type="tel" name="phoneNo"
+                id="name" placeholder="Phone no." required /><br /><br />
+            <label>Email :&nbsp;&nbsp;</label><input id="email" type="email" name="email" id="email"
+                placeholder="E-Mail" /><br /><br />
+            <p style="float: left; margin: 0px -378px 0 371px;">
+                Address :&nbsp;&nbsp;
+            </p>
+            <textarea name="Address" id="feedback" cols="30" rows="10" placeholder="Address..."
+                required></textarea><br><br>
+            <label id="name" for="payment-method">Payment Method :&nbsp;&nbsp;
+                <select name="paymentMethod" required>
+                    <!-- <option value="Payment Method" selected>Payment Method</option> -->
+                    <option value="UPI" disabled>UPI</option>
+                    <option value="Cash on Delivery">Cash on Delivery</option>
+                    <option value="Net Banking" disabled>Net Banking</option>
+                    <option value="Credit\Debit card " disabled>Credit\Debit card</option>
+                </select>
+                <nbsp></nbsp>
+            </label>
+        </center>
+
+        <br />
+        <input type="submit" id="submitDetails" name="submitDetails" value="Place Order" /><br />
+    </form>
+
+    <p id="copyright">&copy;copyrights reserved</p>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmed</title>
+    <link rel="shortcut icon" href="images/logo.png" />
+    <link rel="stylesheet" href="home.css" />
+    <script src="feedback.js"></script>
+</head>
+<body>
+    <div id="heading">
+        <img src="images/Medical.png" alt="logo" />
+        <a href="home.html">CARE LIFE HOSPITAL</a>
+    </div>
+
+    <nav>
+        <a href="home.html" class="nav-list">Home</a>
+        <div class="dropdown">
+            <button onmouseover="myFunction()" onclick="myFunction()" class="dropbtn">Appointment</button>
+            <div id="myDropdown" class="dropdown-content">
+                <a href="bookAppointment.html">Booking</a>
+                <a href="MedicineOrder.html">Medicine order</a>
+            </div>
+        </div>
+        <a id="disease-predictor" class="nav-list" onclick="DiseasePredictor()">Disease Predictor</a>
+        <a href="http://localhost/Hospital-Management-system/public/patin.php" class="nav-list">Save Lives</a>
+        <a href="healthCamps.html" class="nav-list">Health Camps</a>
+        <a class="nav-list" onclick="DiseaseInfo()">Disease Information</a>
+        <a href="contactUs.html" class="nav-list">Contact Us</a>
+        <a href="feedback.html" class="nav-list">Feedback</a>
+    </nav>
+
+    <div style="height: 47vh;margin-top: -18px;background-repeat: no-repeat;background-size: 100% 120%; background-image: url('images/confetti.gif');">
+
+        <center style="padding-top: 23.5%;">
+            <h1 style="color: rgb(122, 20, 37);font-size: 45px;text-shadow:0 0 10px rgb(251, 178, 178);margin-bottom: 1%;">Your Order is Placed..</h1>
+            <a style="color: blue;" href="home.html">Go To Homepage</a>
+        </center>
+        
+        <p style="margin-top: 4.8%" id="copyright">&copy;copyrights reserved</p>
+    </div>
+</body>
+</html>
