@@ -8,7 +8,8 @@ body {
   display: flex;
   flex-direction: column;
 }
-script{
+
+script {
   display: none;
 }
 
@@ -134,6 +135,7 @@ nav>a {
   margin: 1%;
   height: 400px;
 }
+
 /* 
 .d1 > img {
   
@@ -175,6 +177,7 @@ footer {
 .wallOfHonour {
   font-family: "Carter One", cursive;
   width: 62%;
+  color: #f6e8e8;
   font-size: 4.5vw;
   text-align: center;
   text-shadow: red 0px 0px 30px;
@@ -294,18 +297,174 @@ footer {
   padding: 8px 0;
 
 }
-@media(max-width:912px){
-  footer{
+
+/* ********************************************************************************************************* */
+
+
+/* ********************************************  max-width:912px  ****************************************** */
+
+
+@media(max-width:912px) {
+
+  footer {
     display: flex;
     flex-direction: column;
     align-items: center;
 
   }
+
   #footer-main-right {
     width: 50%;
     float: left;
     margin-top: 3.5%;
     margin-left: 10%;
     margin-bottom: 2%;
+  }
+
+  .d1 {
+    font-size: 12px;
+    height: 320px;
+  }
+
+  #slider {
+    background-size: cover;
+    height: 250px;
+  }
+
+  .nav-list {
+    font-size: 1.6vw;
+  }
+
+  .award {
+    width: 71%;
+    margin: 25% 3%;
+    height: 136px;
+  }
+
+  .award-info {
+    text-align: center;
+    font-size: 12px;
+  }
+
+  #footer-main-right>iframe {
+    width: 87%;
+    height: 208px;
+  }
+
+  #footer-main-right>iframe button {
+    size: 10px;
+  }
+
+  #map-info {
+    font-size: 1rem;
+  }
+
+  #footer-main-right {
+    padding-left: 10%;
+    margin-left: 0%;
+  }
+
+  #ambulance-div {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+  }
+
+  .registerbtn {
+    width: 41%;
+  }
 }
+
+
+/* ********************************************************************************************************* */
+
+
+/* ********************************************  max-width:558px  ****************************************** */
+
+
+@media(max-width:558px) {
+  body {
+    background-color: yellow;
+  }
+
+  #footer-main-left {
+    width: 90%;
+    padding-left: 45px;
+    float: left;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(146px, 0fr));
+    column-gap: 1%;
+    content: overflow;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 7%;
+  }
+
+  .d1 {
+    width: 80%;
+    font-size: 14px;
+    background-color: rgb(255, 245, 232);
+    padding: 1%;
+    margin: 6% 0 0 10%;
+    height: 300px;
+  }
+
+  .main1 {
+    grid-template-columns: repeat(2, auto);
+    margin-top: 2%;
+    display: grid;
+    margin-bottom: 2%;
+  }
+
+  #ambulance,
+  #copyright {
+    font-size: 2.4vw;
+  }
+
+  #slider {
+    height: 200px;
+  }
+
+
 }
+
+/* ********************************************************************************************************* */
+
+
+/* ********************************************  max-width:446px  ****************************************** */
+
+
+@media(max-width:446px) {
+  body {
+    background-color: rgb(0, 255, 38);
+  }
+
+  #footer-main-left {
+    width: 80%;
+  }
+
+  #footer-main-left {
+    width: 85%;
+    display: grid;
+    justify-content: center;
+    padding: 0;
+    grid-template-columns: repeat(2, auto);
+    /* align-items: center; */
+    margin: 0px 0 15% 9%;
+  }
+
+  .award {
+    width: 67%;
+    margin: 39% 3%;
+    height: 95px;
+  }
+  .d1{
+    font-size: 12px;
+  }
+  .wallOfHonour{
+    font-size: 5.4vw;
+  }
+}
+
+/* ********************************************************************************************************* */
